@@ -1,0 +1,12 @@
+PACKAGE v.1.2
+    - documents
+        - Atlant <-- Atlant Documentation
+        - Revolution Slider <-- Slider documentation/editor/samples
+
+    - front-end <-- Atlant Front-End Template
+
+    - html <-- Atlant HTML version
+
+    - less <-- Atlant LessCss version
+
+    - PSD, PNG <-- Layered PSD & PNG FILES

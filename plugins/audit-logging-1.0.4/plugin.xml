@@ -1,0 +1,15 @@
+<plugin name='audit-logging' version='1.0.4' grailsVersion='2.0 &gt; *'>
+  <authorEmail>roos@symentis.com</authorEmail>
+  <title>Audit Logging Plugin</title>
+  <description> Automatically log change events for domain objects.
+The Audit Logging plugin additionally adds an instance hook to domain objects that allows you to hang Audit events off of them.
+The events include onSave, onChange, and onDelete.
+When called, the event handlers have access to oldObj and newObj definitions that will allow you to take action on what has changed.
+    </description>
+  <documentation>http://grails.org/plugin/audit-logging</documentation>
+  <type>AuditLoggingGrailsPlugin</type>
+  <resources>
+    <resource>org.codehaus.groovy.grails.plugins.orm.auditable.AuditLogEventController</resource>
+    <resource>org.codehaus.groovy.grails.plugins.orm.auditable.AuditLogEvent</resource>
+  </resources>
+</plugin>
