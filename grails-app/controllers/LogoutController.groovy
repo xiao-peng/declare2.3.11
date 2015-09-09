@@ -1,4 +1,4 @@
-import com.bjrxht.cms.core.system.LoginRecord
+
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 import org.springframework.security.core.session.SessionRegistry
 
@@ -10,18 +10,6 @@ class LogoutController {
      */
     def index = {
         // TODO put any pre-logout code here
-        try{
-            LoginRecord.withSession {
-                def lr=LoginRecord.findBySessionIdAndLogoutTimeIsNull(session?.getId());
-                if(lr){
-                    lr.logoutTime=new Date();
-                    lr.save(flush: true);
-                }
-            }
-
-        }catch(e){
-
-        }
 
         sessionRegistry.removeSessionInformation(session?.getId())
         //session.invalidate();

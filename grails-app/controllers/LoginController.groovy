@@ -1,4 +1,4 @@
-import com.bjrxht.cms.core.BaseUser
+import com.bjrxht.core.BaseUser
 import grails.converters.JSON
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 import org.springframework.security.authentication.AccountExpiredException
@@ -146,51 +146,6 @@ class LoginController {
 
     }
     def resetPass(){
-        def map=[:]
-        def user=BaseUser.findByUsername(params.email);
-        if(user.phone==params.phone){
-            long newPass=new Random().nextLong(999999999l - 100000000l + 1) + 100000000l;
-            user.password="${newPass}";
-            user.save(flush: true);
-            map.result=true;
-            map.message="";
-            map.url="http://mail."+params.email.tokenize('@')[1];
 
-            String path = request.getContextPath();
-            String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-            def url = "${basePath}login/auth";
-            def timer=new Timer();
-            timer.runAfter(1*1000){
-                try {
-                    String htmlStr = """
-                <div style="border:1px solid #eeeeee;padding:15px;width:620px">
-
-                    <div style="width:100%;text-align:right;" ></div>
-                    <div style="width:100%;text-align:left;line-height:20px;text-indent: 2em;padding-top:25px" >尊敬的用户：${user.username}</div>
-                    <div style="width:100%;text-align:left;line-height:25px;text-indent: 2em;padding-top:20px" >我们已经收到您的忘记密码重设信息，你的系统密码重设为${newPass}，请及时登录系统重置。<br/>
-                    点击下面的确认链接即可登录系统：
-                    <a href="${url}" target="_blank">点击这里登录</a></div>
-<div style="width:100%;text-align:left;line-height:25px;text-indent: 2em;padding-top:15px" >如果您的邮件阅读程序不支持点击，请将上面的地址拷贝至您的浏览器（例如IE）地址栏后打开。</div>
-<div style="width:100%;text-align:left;line-height:25px;text-indent: 2em;padding-top:15px" >
-<a href="${url}" target="_blank" style="line-height:25px;">${url}</a>
-</div>
- <div style="width:100%;text-align:left;line-height:20px;padding-top:15px;text-indent: 2em;" >
- 欢迎您马上登录<A href="${basePath}" target="_blank">${basePath}</A>发布需求、寻找项目，希望您与我们一起，见证彼此成长！</div>
-</div>
-                </div>
-                """
-                    mailService.sendMail({
-                        to bu.email
-                        from grailsApplication.config.grails.mail.username
-                        subject "用户忘记密码重设"
-                        html htmlStr
-                    });
-                }catch (e){}
-            }
-        }else{
-            map.result=false;
-            map.message="";
-        }
-        render map as JSON;
     }
 }
