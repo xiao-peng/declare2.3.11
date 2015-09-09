@@ -1,4 +1,4 @@
-package bjrxht.image
+package com.bjrxht.image
 
 import com.sun.image.codec.jpeg.JPEGCodec
 import com.sun.image.codec.jpeg.JPEGImageEncoder

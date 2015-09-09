@@ -1,4 +1,4 @@
-package bjrxht.grails.annotation;
+package com.bjrxht.grails.annotation;
 
 import java.lang.annotation.*;
 

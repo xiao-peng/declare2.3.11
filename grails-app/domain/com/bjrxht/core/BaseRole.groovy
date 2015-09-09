@@ -3,7 +3,7 @@ package com.bjrxht.core
 import com.bjrxht.grails.annotation.Title
 
 @Title(zh_CN='基本角色表')
-class BaseRole implements org.activiti.engine.identity.Group {
+class BaseRole{ // implements org.activiti.engine.identity.Group {
 	static auditable = true
 	//uuid的唯一性主键 兼容 activiti工作流
 	String id

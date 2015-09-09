@@ -1,4 +1,4 @@
-import bjrxht.converters.marshaller.json.TableDomainClassMarshaller
+import com.bjrxht.converters.marshaller.json.TableDomainClassMarshaller
 import grails.converters.JSON
 import org.codehaus.groovy.grails.plugins.springsecurity.SecurityFilterPosition
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils

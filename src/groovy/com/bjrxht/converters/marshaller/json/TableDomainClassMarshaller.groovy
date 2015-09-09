@@ -1,4 +1,4 @@
-package bjrxht.converters.marshaller.json
+package com.bjrxht.converters.marshaller.json
 
 import grails.converters.JSON
 import org.codehaus.groovy.grails.commons.*

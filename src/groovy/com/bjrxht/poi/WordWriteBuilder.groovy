@@ -1,4 +1,4 @@
-package bjrxht.poi
+package com.bjrxht.poi
 
 import org.apache.poi.xwpf.usermodel.*
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBookmark

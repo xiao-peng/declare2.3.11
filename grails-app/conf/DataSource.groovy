@@ -61,7 +61,7 @@ grails {
         host = "localhost"
         port = 27017
         username = "xp"
-        password = "xp"      //bjrxht 是root xp是
+        password = "xp"      //com.bjrxht 是root xp是
         databaseName = "newDemo"
         stateless = true // whether to use stateless sessions by default
         // Alternatively, using 'replicaSet' or 'connectionString'

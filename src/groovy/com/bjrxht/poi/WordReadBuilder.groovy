@@ -1,4 +1,4 @@
-package bjrxht.poi
+package com.bjrxht.poi
 
 import org.apache.poi.extractor.ExtractorFactory
 import org.apache.poi.hwpf.HWPFDocumentCore

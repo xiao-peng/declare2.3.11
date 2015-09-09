@@ -1,4 +1,4 @@
-package bjrxht.cache
+package com.bjrxht.cache
 
 import grails.plugin.cache.web.filter.WebKeyGenerator
 import org.codehaus.groovy.grails.plugins.springsecurity.GrailsUser

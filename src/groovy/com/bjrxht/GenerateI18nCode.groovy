@@ -1,4 +1,4 @@
-package bjrxht
+package com.bjrxht
 
 import com.bjrxht.activiti.*
 import com.bjrxht.cms.content.*
