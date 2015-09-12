@@ -8,6 +8,8 @@ class Declare {
    String name
    @Title(zh_CN='标识')
    String code
+   @Title(zh_CN='域名')
+   String domainName
    @Title(zh_CN='注册起始日期')
    Date regBeginDate
    @Title(zh_CN='注册截止日期')

@@ -1,13 +1,16 @@
+import com.bjrxht.declare.Declare
+
 class GlobalFilters {
 
     def filters = {
         all(controller:'*', action:'*') {
             before = {
-               if(!request.getAttribute("declareRenderingUri")){
+               if(!session.getAttribute("declareRenderingUri")){
                    def uri="";
                    def serverName=request.getServerName().toLowerCase();
-                   //@todo, 去数据库比对，取出uri
-                   request.setAttribute("declareRenderingUri",uri);
+                   //@done, 去数据库比对，取出uri
+                   uri=Declare.findByDomainName(serverName).code;
+                   session.setAttribute("declareRenderingUri",uri);
                }
             }
             after = { Map model ->
