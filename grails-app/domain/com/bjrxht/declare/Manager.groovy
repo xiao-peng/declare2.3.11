@@ -3,8 +3,8 @@ package com.bjrxht.declare
 import com.bjrxht.core.BaseUser
 import com.bjrxht.grails.annotation.Title
 
-@Title(zh_CN='注册用户信息表')
-class Register {
+@Title(zh_CN='申报事项管理员表')
+class Manager {
    BaseUser baseUser
    Declare declare
    Date dateCreated

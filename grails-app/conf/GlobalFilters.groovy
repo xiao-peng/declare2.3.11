@@ -9,8 +9,8 @@ class GlobalFilters {
                    def uri="";
                    def serverName=request.getServerName().toLowerCase();
                    //@done, 去数据库比对，取出uri
-                   uri=Declare.findByDomainName(serverName).code;
-                   session.setAttribute("declareRenderingUri",uri);
+                   uri=Declare.findByDomainName(serverName)?.code;
+                   session.setAttribute("declareRenderingUri",uri?:'');
                }
             }
             after = { Map model ->

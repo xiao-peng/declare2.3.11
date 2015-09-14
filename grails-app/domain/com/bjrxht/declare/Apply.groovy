@@ -9,9 +9,7 @@ class Apply {
    Date dateCreated
    Date lastUpdated
    static constraints = {
-
-
-
+      register(nullable: false,unique: true)
    }
 
    static mapping = {
