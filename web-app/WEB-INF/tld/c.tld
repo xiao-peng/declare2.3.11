@@ -4,7 +4,6 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
     version="2.1">
-
   <description>JSTL 1.2 core library</description>
   <display-name>JSTL core</display-name>
   <tlib-version>1.2</tlib-version>
