@@ -1,5 +1,6 @@
 <decorators>
     <excludes>
         <pattern>/atmosphere/*</pattern>
+
     </excludes>
 </decorators>
