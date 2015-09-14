@@ -60,9 +60,9 @@ grails {
     mongo {
         host = "localhost"
         port = 27017
-        username = "xp"
-        password = "xp"      //com.bjrxht 是root xp是
-        databaseName = "newDemo"
+        username = "declare"
+        password = "declare"
+        databaseName = "declare"
         stateless = true // whether to use stateless sessions by default
         // Alternatively, using 'replicaSet' or 'connectionString'
         // replicaSet = [ "localhost:27017", "localhost:27018"]
