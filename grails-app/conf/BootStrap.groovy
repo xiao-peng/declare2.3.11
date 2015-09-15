@@ -1,7 +1,7 @@
 import com.bjrxht.converters.marshaller.json.TableDomainClassMarshaller
 import com.bjrxht.declare.Declare
 import grails.converters.JSON
-import org.bouncycastle.jce.provider.symmetric.Grain128
+
 import org.codehaus.groovy.grails.plugins.springsecurity.SecurityFilterPosition
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 import com.bjrxht.core.*
