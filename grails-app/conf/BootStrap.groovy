@@ -46,7 +46,7 @@ class BootStrap {
     def createDefaultUsers() {
         def admin = BaseUser.findByUsername('admin')
         if (!admin) {
-            admin = new BaseUser(email: 'admin@bjrxht.com',firstName: '',lastName: 'admin',username:'admin',password: 'admin',enabled:true,accountExpired:false,accountLocked:false,passwordExpired:false)
+            admin = new BaseUser(email: 'admin@bjrxht.com',firstName: '1',lastName: 'admin',username:'admin',password: 'admin',enabled:true,accountExpired:false,accountLocked:false,passwordExpired:false)
             admin.save(flush: true)
         }
         new BaseUserBaseRole(baseUser:admin,baseRole:BaseRole.findByAuthority('ROLE_ADMIN')).save(flush: true);
