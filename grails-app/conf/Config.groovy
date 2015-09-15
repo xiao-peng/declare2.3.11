@@ -152,8 +152,8 @@ grails.plugins.springsecurity.onInteractiveAuthenticationSuccessEvent = {e,appCt
         remoteaddr="localhost";
     }
     com.bjrxht.cms.core.system.LoginRecord.withNewSession {
-        //def lr=new com.com.bjrxht.cms.core.system.LoginRecord(baseUser:baseUser,remoteaddr:remoteaddr,sessionId:sessionId,loginTime: new Date());
-        //lr.save(flush:true);
+        def lr=new com.com.bjrxht.cms.core.system.LoginRecord(baseUser:baseUser,remoteaddr:remoteaddr,sessionId:sessionId,loginTime: new Date());
+        lr.save(flush:true);
     }
 }
 
