@@ -6,6 +6,7 @@
         <meta name="layout" content="main"/>
     </g:if>
     <g:include action="js" />
+    <script type="text/javascript" src="${request.contextPath}/js/template/atlant/less/js/plugins/daterangepicker/daterangepicker.js"></script>
     <style>
     .input-group .form-control {
         z-index: auto;
@@ -95,12 +96,25 @@
 <div class="panel-body">
 <g:hiddenField name="version" value=""/>
 <g:hiddenField name="id" value=""/>
-
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-            <label class="col-md-3 control-label">名称</label>
-            <div class="col-md-9">
+                <label class="col-md-1 control-label">年度</label>
+                <div class="col-md-11">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                        <g:textField class="form-control" name="year" required="" value=""/>
+                    </div>
+                    <span class="help-block">*</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+            <label class="col-md-1 control-label">名称</label>
+            <div class="col-md-11">
                 <div class="input-group">
                     <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                     <g:textField class="form-control" name="name" required="" value=""/>
@@ -113,8 +127,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label class="col-md-3 control-label">标识</label>
-                <div class="col-md-9">
+                <label class="col-md-1 control-label">标识</label>
+                <div class="col-md-11">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                         <g:textField class="form-control" name="code" required="" value=""/>
@@ -127,8 +141,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label class="col-md-3 control-label">域名</label>
-                <div class="col-md-9">
+                <label class="col-md-1 control-label">域名</label>
+                <div class="col-md-11">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                         <g:textField class="form-control" name="domainName" required="" value=""/>
@@ -146,9 +160,8 @@
                 <div class="col-md-9">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                        <g:textField class="form-control" name="regBeginDate" required="" value=""/>
+                        <g:textField class="form-control datepicker" data-date-format="yyyy-mm-dd" name="regBeginDate" value=""/>
                     </div>
-                    <span class="help-block">*</span>
                 </div>
             </div>
         </div>
@@ -158,9 +171,8 @@
                 <div class="col-md-9">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                        <g:textField class="form-control" name="regEndDate" required="" value=""/>
+                        <g:textField class="form-control datepicker" data-date-format="yyyy-mm-dd" name="regEndDate" value=""/>
                     </div>
-                    <span class="help-block">*</span>
                 </div>
             </div>
         </div>
@@ -172,9 +184,8 @@
                 <div class="col-md-9">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                        <g:textField class="form-control" name="applyBeginDate" required="" value=""/>
+                        <g:textField class="form-control datepicker" data-date-format="yyyy-mm-dd" name="applyBeginDate" value=""/>
                     </div>
-                    <span class="help-block">*</span>
                 </div>
             </div>
         </div>
@@ -184,9 +195,8 @@
                 <div class="col-md-9">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                        <g:textField class="form-control" name="applyBeginDate" required="" value=""/>
+                        <g:textField class="form-control datepicker" data-date-format="yyyy-mm-dd" name="applyEndDate" value=""/>
                     </div>
-                    <span class="help-block">*</span>
                 </div>
             </div>
         </div>

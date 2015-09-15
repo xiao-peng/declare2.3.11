@@ -10,6 +10,8 @@ class Declare {
    String code
    @Title(zh_CN='域名')
    String domainName
+    @Title(zh_CN='年度')
+    Integer year
    @Title(zh_CN='注册起始日期')
    Date regBeginDate
    @Title(zh_CN='注册截止日期')
@@ -21,8 +23,14 @@ class Declare {
    Date dateCreated
    Date lastUpdated
    static constraints = {
-
-
+        name(nullable: false,size: 0..500)
+        code(nullable: false,size: 0..500)
+       domainName(nullable: true,size: 0..500)
+       year(nullable: true)
+       regBeginDate(nullable: true)
+       regEndDate(nullable: true)
+       applyBeginDate(nullable: true)
+       applyEndDate(nullable: true)
 
    }
 

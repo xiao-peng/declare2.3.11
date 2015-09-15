@@ -94,8 +94,6 @@
 <script src="${request.contextPath}/js/workflow.js"></script>
 
 <!-- END THIS PAGE PLUGINS-->
-<script src="${request.contextPath}/plugins/events-push-1.0.M7/js/jquery/jquery.atmosphere.js" type="text/javascript" ></script>
-<script src="${request.contextPath}/plugins/events-push-1.0.M7/js/grails/grailsEvents.js" type="text/javascript" ></script>
 <script src="${request.contextPath}/js/application.js" type="text/javascript" ></script>
 
 <script>
