@@ -17,6 +17,8 @@
  * under the License.
 */
 
+
+import org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext
 import org.codehaus.groovy.grails.plugins.orm.auditable.AuditLogEvent
 import org.codehaus.groovy.grails.plugins.orm.auditable.AuditLogListener
 import org.codehaus.groovy.grails.plugins.orm.auditable.AuditLogListenerUtil
@@ -101,9 +103,27 @@ When called, the event handlers have access to oldObj and newObj definitions tha
 
     // Register generic GORM listener
     def doWithApplicationContext = { applicationContext ->
-        application.mainContext.eventTriggeringInterceptor.datastores.each { key, datastore ->
+        def datastores=[:];
+        if(application.mainContext.eventTriggeringInterceptor){
+            datastores=application.mainContext.eventTriggeringInterceptor.datastores
+        }else{
+            if(application.mainContext.mongoDatastore){
+                datastores=['mongoDatastore':application.mainContext.mongoDatastore]
+            }
+            /*
+            * 2015-09-15
+                GORM for Neo4j
+                GORM for Simpledb
+                GORM for Dynamodb
+                GORM for Redis
+                GORM for Mongodb
+                GORM for Rest-client
+                GORM for Cassandra
+                */
+        }
+        datastores.each { key, datastore ->
             // Don't register the listener if we are disabled
-            if (!application.config.auditLog.disabled && !datastore.config.auditLog.disabled) {
+            if (!application.config.auditLog.disabled ) { //&& !datastore.config.auditLog.disabled
                 def listener = new AuditLogListener(datastore)
                 listener.with {
                     grailsApplication = application
