@@ -64,7 +64,16 @@
         </ul>
     </li>
 </sec:ifAnyGranted>
-
+<sec:ifAnyGranted roles="ROLE_USER">
+    <li class="xn-title"><g:message code="default.systemSet.label" default="SystemSet"/></li>
+    <li class="xn-openable">
+        <a href="#"><span class="fa fa-clock-o"></span> <span class="xn-text"><g:message code="default.systemSet.label" default="SystemSet"/></span></a>
+        <ul>
+            <li><a href="javascript:void(0);"onclick="loadRemotePage('${request.contextPath}/apply/list',null)"><span class="fa fa-clipboard"></span><g:message code="default.apply.label" default="Apply Manage"/></a></li>
+            <li><a href="javascript:void(0);"onclick="loadRemotePage('${request.contextPath}/note/list',null)"><span class="fa fa-clipboard"></span><g:message code="default.note.label" default="Note Manage"/></a></li>
+        </ul>
+    </li>
+</sec:ifAnyGranted>
 
 
 

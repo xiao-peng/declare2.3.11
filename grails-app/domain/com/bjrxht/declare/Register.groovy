@@ -10,7 +10,8 @@ class Register {
    Date dateCreated
    Date lastUpdated
    static constraints = {
-      baseUser(nullable: false,unique: true)
+       baseUser(nullable: false)
+       declare(nullable: false)
    }
 
    static mapping = {

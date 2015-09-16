@@ -167,7 +167,16 @@ grails.plugins.springsecurity.filterChain.chainMap = [
 ]
 grails.plugins.springsecurity.successHandler.defaultTargetUrl='/workspace/index'
 grails.plugins.springsecurity.logout.afterLogoutUrl = '/login/auth'
-
+grails {
+    mail {
+        host = "smtp.mxhichina.com"
+        port = 25
+        username = "wxy1991@rxhtcn.com"
+        password = "qwe10201832"
+        protocol = 'smtp'
+        props = ['mail.smtp.auth':'true']
+    }
+}
 auditLog {
     actorClosure = { request, session ->
         if (request.applicationContext.springSecurityService.principal instanceof java.lang.String){

@@ -2,7 +2,7 @@
 <html lang="zh_CN" class="body-full-height">
 <head>
     <!-- META SECTION -->
-    <title><g:message code="system.login.title.label" default="系统登录" /></title>
+    <title><g:message code="system.title.label" default="信息管理系统" /></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -56,7 +56,6 @@
                         <label for='remember_me' style="color:white"><g:message code="system.login.rememberme.label" default="Remember me" /></label>
                     </div>
                     <div class="col-md-6" style="color: #fff;text-align: right;">
-                        <a href="${request.contextPath}/register/index" style="color: white"><g:message code="system.login.register.label" default="Register" /></a> |
                         <a href="${request.contextPath}/login/forgetPass" style="color: white"><g:message code="system.login.forget.password.label" default="Forget passowrd" /></a>
                     </div>
                 </div>

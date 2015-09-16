@@ -27,7 +27,7 @@
             var obj=new Object();
             obj.ids=ids.join(",");
             if(confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}')) {
-                $.post("${request.contextPath}/declare/deleteAll", obj,
+                $.post("${request.contextPath}/requestmap/deleteAll", obj,
                         function (data, textStatus) {
                             if (data.result) {
                                 $('#alertSucess').removeClass('hide');
@@ -58,14 +58,37 @@
         $('#editForm').form('clear');
         var data=$('#table').bootstrapTable('getData');
         $('#editForm').form('load',data[index]);
+        $("#type").selectpicker('val', '普通类');
+        if(data[index].type && data[index].type!=''){
+            $("#type").selectpicker('val', data[index].type);
+        }
+        $("#parentId").selectpicker('val', '');
+        $("#parentId").selectpicker('val', data[index]['parent.id']);
+        if(!data[index].attachmentLimit || data[index].attachmentLimit==''){
+           $("#attachmentLimit").selectpicker('val','');
+            $('#allowAnonymously').click();
+        }else{
+            var list=data[index].attachmentLimit.toString().split(',');
+            $('#attachmentLimit').attr('disabled',false);
+            $('#attachmentLimit').removeAttr("disabled");
+            $("#attachmentLimit").selectpicker('val',list);
+        }
     }
-
+    function checkLimit(obj){
+        if(obj.checked){
+           //$('input[name="attachmentLimit"]').val('');
+           $('#attachmentLimit').attr('disabled',true);
+        }else{
+            $('#attachmentLimit').attr('disabled',false);
+            $('#attachmentLimit').removeAttr("disabled");
+        }
+    }
     function showOne(index,id){
         editOne(index,id);
     }
     function importExcel(){
         $('#excelForm').form('submit', {
-            url:'${request.contextPath}/declare/importExcel',
+            url:'${request.contextPath}/requestmap/importExcel',
             success: function(data){
                 var data = eval('(' + data + ')'); // change the JSON string to javascript object
                 $('#importModal').modal('hide');

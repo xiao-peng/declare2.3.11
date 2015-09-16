@@ -72,7 +72,7 @@
         <thead>
         <tr>
             <th data-field="nofield" data-checkbox="true"></th>
-            %{--<th data-field="id" data-sortable="true">ID</th>--}%
+            <th data-field="id" data-sortable="true">ID</th>
             <th data-field="year" data-sortable="true" >年度</th>
             <th data-field="name" data-sortable="true" >名称</th>
             <th data-field="code" data-sortable="true" >标识</th>
@@ -81,8 +81,7 @@
             <th data-field="regEndDate" data-sortable="true">注册截止日期</th>
             <th data-field="applyBeginDate" data-sortable="true">申报起始日期</th>
             <th data-field="applyEndDate" data-sortable="true">申报截止日期</th>
-
-            %{--<th data-field="name" data-formatter="editFormatter"><g:message code="default.button.edit.label" default="Edit"/></th>--}%
+            <th data-field="name" data-formatter="editFormatter"><g:message code="default.button.edit.label" default="Edit"/></th>
 
         </tr>
         </thead>
@@ -90,7 +89,7 @@
 </div>
 
 <div class="row box animated" id="box-edit">
-<form class="form-horizontal" id="editForm" action="${request.contextPath}/declare/save"
+<form class="form-horizontal" id="editForm" action="${request.contextPath}/declare/serverSave"
       enctype="multipart/form-data" method="post">
 <div class="panel panel-default">
 <div class="panel-body">
@@ -159,8 +158,8 @@
                 <label class="col-md-3 control-label">注册起始日期</label>
                 <div class="col-md-9">
                     <div class="input-group">
-                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                        <g:textField class="form-control datepicker" data-date-format="yyyy-mm-dd" name="regBeginDate" value=""/>
+                        <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                        <g:textField class="form-control datepicker" name="regBeginDate" value=""/>
                     </div>
                 </div>
             </div>
@@ -170,7 +169,7 @@
                 <label class="col-md-3 control-label">注册截止日期</label>
                 <div class="col-md-9">
                     <div class="input-group">
-                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                        <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                         <g:textField class="form-control datepicker" data-date-format="yyyy-mm-dd" name="regEndDate" value=""/>
                     </div>
                 </div>
@@ -183,7 +182,7 @@
                 <label class="col-md-3 control-label">申报起始日期</label>
                 <div class="col-md-9">
                     <div class="input-group">
-                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                        <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                         <g:textField class="form-control datepicker" data-date-format="yyyy-mm-dd" name="applyBeginDate" value=""/>
                     </div>
                 </div>
@@ -194,7 +193,7 @@
                 <label class="col-md-3 control-label">申报截止日期</label>
                 <div class="col-md-9">
                     <div class="input-group">
-                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                        <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                         <g:textField class="form-control datepicker" data-date-format="yyyy-mm-dd" name="applyEndDate" value=""/>
                     </div>
                 </div>
@@ -210,7 +209,6 @@
     <button class="btn btn-default margin  box-switcher" data-switch="box-list" type="button"><span
             class="glyphicon glyphicon-list-alt"></span> &nbsp;${message(code: 'default.button.back.label', default: 'Back')}
     </button>
-</div>
 </div>
 </div>
 </form>

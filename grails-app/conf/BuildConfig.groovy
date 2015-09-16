@@ -89,6 +89,7 @@ grails.project.dependency.resolution = {
         //compile ":handlebars-asset-pipeline:1.3.0.1"
         //compile ':spring-security-core:2.0-RC3'
         compile ':spring-security-core:1.2.7.4'
+        compile ":mail:1.0.5"
         compile ":rendering:1.0.0"
         compile ":ckeditor:4.4.1.0"
         compile ":audit-logging:1.0.4"

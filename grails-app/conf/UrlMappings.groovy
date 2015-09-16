@@ -1,6 +1,10 @@
 class UrlMappings {
 
 	static mappings = {
+        "/declares/${HTMLcode}/${HTMLname}.html"{
+            controller="declare"
+            action="html"
+        }
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
                 // apply constraints here

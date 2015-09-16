@@ -3,8 +3,7 @@
 <html lang="en">
 <g:set var="currentUser" value="${com.bjrxht.core.BaseUser.findByUsername(sec.username())}"/>
 <head>
-<!-- META SECTION -->
-<title>系统管理</title>
+<title><g:message code="system.title.label" default="信息管理系统" /></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />

@@ -23,8 +23,8 @@ class Declare {
    Date dateCreated
    Date lastUpdated
    static constraints = {
-        name(nullable: false,size: 0..500)
-        code(nullable: false,size: 0..500)
+       name(nullable: false,size: 0..500)
+       code(nullable: false,size: 0..500,unique: true)
        domainName(nullable: true,size: 0..500)
        year(nullable: true)
        regBeginDate(nullable: true)

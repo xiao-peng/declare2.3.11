@@ -53,6 +53,7 @@ class BootStrap {
 
     }
     private def createRequestMap() {
+        new Requestmap(url: '/static/**', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/js/**', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/imgFile/**', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/ocr/**', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
@@ -71,7 +72,7 @@ class BootStrap {
         new Requestmap(url: '/pdf/**', configAttribute: 'IS_AUTHENTICATED_FULLY').save(flush: true)
         new Requestmap(url: '/', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/uploads/**', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
-
+        new Requestmap(url: '/workspace/**', configAttribute: 'IS_AUTHENTICATED_FULLY,IS_AUTHENTICATED_REMEMBERED').save()
         new Requestmap(url: '/**', configAttribute: 'IS_AUTHENTICATED_FULLY').save(flush: true)
 
     }
