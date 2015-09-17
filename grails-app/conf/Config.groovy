@@ -157,7 +157,7 @@ grails.plugins.springsecurity.onInteractiveAuthenticationSuccessEvent = {e,appCt
     }
 }
 
-
+/*
 grails.plugins.springsecurity.useBasicAuth = true
 grails.plugins.springsecurity.basic.credentialsCharset="UTF-8"
 grails.plugins.springsecurity.basic.realmName ="Declare System" //"HTTP Basic Auth"
@@ -165,18 +165,11 @@ grails.plugins.springsecurity.filterChain.chainMap = [
         '/hessian/**': 'JOINED_FILTERS,-exceptionTranslationFilter' ,
         '/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
 ]
+*/
+
 grails.plugins.springsecurity.successHandler.defaultTargetUrl='/workspace/index'
 grails.plugins.springsecurity.logout.afterLogoutUrl = '/login/auth'
-grails {
-    mail {
-        host = "smtp.mxhichina.com"
-        port = 25
-        username = "wxy1991@rxhtcn.com"
-        password = "qwe10201832"
-        protocol = 'smtp'
-        props = ['mail.smtp.auth':'true']
-    }
-}
+
 auditLog {
     actorClosure = { request, session ->
         if (request.applicationContext.springSecurityService.principal instanceof java.lang.String){
@@ -227,5 +220,19 @@ ckeditor {
             allowed = ['swf']
             denied = []
         }
+    }
+}
+
+grails {
+    mail {
+
+        host = "smtp.sina.com"
+        port = 25
+        username = "auto_robots@sina.com"
+        password = "sina2009"
+        //mailProtocol = 'smtp'
+
+        protocol = 'smtp'
+        props = ['mail.smtp.auth':'true']
     }
 }
