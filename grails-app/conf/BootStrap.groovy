@@ -73,6 +73,7 @@ class BootStrap {
         new Requestmap(url: '/', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/uploads/**', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/workspace/**', configAttribute: 'IS_AUTHENTICATED_FULLY,IS_AUTHENTICATED_REMEMBERED').save()
+        new Requestmap(url: '/web/**', configAttribute: 'IS_AUTHENTICATED_FULLY,IS_AUTHENTICATED_REMEMBERED').save()
         new Requestmap(url: '/**', configAttribute: 'IS_AUTHENTICATED_FULLY').save(flush: true)
 
     }

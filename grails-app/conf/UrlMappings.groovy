@@ -2,7 +2,15 @@ class UrlMappings {
 
 	static mappings = {
         "/declares/${HTMLcode}/${HTMLname}.html"{
-            controller="declare"
+            controller="web"
+            action="html"
+        }
+        "/${HTMLcode}/${HTMLname}.html"{
+            controller="web"
+            action="html"
+        }
+        "/${HTMLname}.html"{
+            controller="web"
             action="html"
         }
         "/$controller/$action?/$id?(.$format)?"{
@@ -12,7 +20,7 @@ class UrlMappings {
         }
 
         "/" {
-            controller="workspace"
+            controller="login"
             action="index"
         }
         //"/"(view:"/index")

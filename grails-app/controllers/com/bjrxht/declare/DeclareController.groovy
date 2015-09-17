@@ -130,12 +130,7 @@ class DeclareController {
         map.message=flash.message;
         render map as JSON;
     }
-    def html(){
-        def currentUser=springSecurityService.currentUser;
-        def declare=Declare.findByCode(params.HTMLcode);
-        render (view:"/declares/${params.HTMLcode}/${params.HTMLname}",
-                model: ['currentUser':currentUser,'declare':declare])
-    }
+
     def registerSave(){
         def map=[:]
         if(BaseUser.countByUsername(params.email)>0){
