@@ -64,7 +64,7 @@ class BootStrap {
         new Requestmap(url: '/logout/**', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/favicon.ico', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/images/favicon.ico', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
-        new Requestmap(url: '/register/**', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
+        new Requestmap(url: '/registration/**', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/j_spring_security_check', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/documents/**', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/baseUser/**', configAttribute: 'ROLE_ADMIN').save(flush: true)
@@ -74,6 +74,12 @@ class BootStrap {
         new Requestmap(url: '/uploads/**', configAttribute: 'IS_AUTHENTICATED_ANONYMOUSLY').save(flush: true)
         new Requestmap(url: '/workspace/**', configAttribute: 'IS_AUTHENTICATED_FULLY,IS_AUTHENTICATED_REMEMBERED').save()
         new Requestmap(url: '/web/**', configAttribute: 'IS_AUTHENTICATED_FULLY,IS_AUTHENTICATED_REMEMBERED').save()
+        new Requestmap(url: '/declare/**', configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/apply/**', configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/baseRole/**', configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/baseUser/**', configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/baseUserBaseRole/**', configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/requestmap/**', configAttribute: 'ROLE_ADMIN').save()
         new Requestmap(url: '/**', configAttribute: 'IS_AUTHENTICATED_FULLY').save(flush: true)
 
     }

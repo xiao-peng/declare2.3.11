@@ -10,6 +10,10 @@ class WebController {
     def springSecurityService;
     def index() { }
     def html(){
+        if(!params.HTMLname){
+            render 'bad request'
+            return false;
+        }
         if(!params.HTMLcode){
             params.HTMLcode=(String)session.getAttribute('declareRenderingUri');
         }

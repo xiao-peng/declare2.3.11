@@ -45,7 +45,7 @@
                 }
             });
             $('#registerForm').form({
-                url:'${request.contextPath}/declare/registerSave',
+                url:'${request.contextPath}/registration/registerSave',
                 onSubmit:function(){
                     var valid = true;
                     $('input,textarea').each(function(i,v){

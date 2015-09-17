@@ -49,7 +49,7 @@ class LoginController {
         }
 
         String view = 'auth'
-        //view="/declares/${session.getAttribute('declareRenderingUri')}/auth"
+        view="/declares/${session.getAttribute('declareRenderingUri')}/auth"
         String postUrl = "${request.contextPath}${config.apf.filterProcessesUrl}"
         render view: view, model: [postUrl: postUrl,rememberMeParameter: config.rememberMe.parameter]
     }
@@ -85,7 +85,9 @@ class LoginController {
             SCH.context?.authentication = authtoken
         }*/
         def config = SpringSecurityUtils.securityConfig
-        render view: 'auth', params: params,
+        String view='auth'
+        view="/declares/${session.getAttribute('declareRenderingUri')}/auth"
+        render view: view, params: params,
                 model: [hasCookie: authenticationTrustResolver.isRememberMe(SecurityContextHolder.context?.authentication),
                         postUrl  : "${request.contextPath}${config.apf.filterProcessesUrl}"]
     }
@@ -148,5 +150,19 @@ class LoginController {
     }
     def resetPass(){
 
+    }
+
+    def html(){
+        if(!params.HTMLname){
+            render 'bad request'
+            return false;
+        }
+        if(!params.HTMLcode){
+            params.HTMLcode=(String)session.getAttribute('declareRenderingUri');
+        }
+        def currentUser=springSecurityService.currentUser;
+        //def declare=Declare.findByCode(params.HTMLcode);
+        render (view:"/declares/${params.HTMLcode}/${params.HTMLname}",
+                model: ['currentUser':currentUser])
     }
 }

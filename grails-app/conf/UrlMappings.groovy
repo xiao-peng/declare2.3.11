@@ -13,6 +13,10 @@ class UrlMappings {
             controller="web"
             action="html"
         }
+        "/login/${HTMLname}.html"{
+            controller="login"
+            action="html"
+        }
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
                 // apply constraints here
